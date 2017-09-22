@@ -10,7 +10,6 @@
             {{ $task -> body }}
         </li>
      @endforeach
-
 </ul>
 
 </body>
