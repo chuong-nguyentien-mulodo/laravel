@@ -14,8 +14,11 @@ class PostsController extends Controller
       return view('posts.create');
     }
     public function store(){
-      dd(Request()->all());
-      Post::create(['title','body']);
+      $this->validate(Request(),[
+        'title' => 'require',
+        'body' => 'require'
+      ]);
+      Post::create(request['title'.'body']);
       return redirect('/');
     }
 }
